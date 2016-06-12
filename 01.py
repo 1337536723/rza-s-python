@@ -1,19 +1,19 @@
 #-*- coding:utf-8 -*-
-#ÅúÁ¿ĞŞ¸Äºó×ºÃû
+#æ‰¹é‡ä¿®æ”¹åç¼€å
 import os 
 import sys
 
 def batch_rename(old_ext,new_ext):
-	#»ñÈ¡µ±Ç°Â·¾¶
+	#è·å–å½“å‰è·¯å¾„
 	homedir=os.getcwd()
-	#os.listdir(homedir)¿ÉÒÔ»ñµÃµ±Ç°Ä¿Â¼ËùÓĞÎÄ¼şÃû×Ö
+	#os.listdir(homedir)å¯ä»¥è·å¾—å½“å‰ç›®å½•æ‰€æœ‰æ–‡ä»¶åå­—
 	for filename in os.listdir(homedir):	
-		#µÃµ½ÎÄ¼şÀ©Õ¹Ãû
+		#å¾—åˆ°æ–‡ä»¶æ‰©å±•å
 		file_ext=os.path.splitext(filename)[1]
 		if old_ext==file_ext:
-			#Ìæ»»ÎÄ¼şºó×ºÃû
+			#æ›¿æ¢æ–‡ä»¶åç¼€å
 			newfile=filename.replace(old_ext,new_ext)
-			#¸øÎÄ¼şÖØÃüÃû
+			#ç»™æ–‡ä»¶é‡å‘½å
 			os.rename(filename,newfile)
 	print("update successfully!")
 			
