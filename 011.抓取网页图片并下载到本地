@@ -1,0 +1,26 @@
+#coding:utf-8
+import urllib.request
+import re
+import os
+
+def open_url(url):
+	req=urllib.request.Request(url)
+	req.add_header("User-Agent","Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/45.0.2454.101 Safari/537.36")
+	html=urllib.request.urlopen(req).read()
+	return html
+	
+def get_links(url):
+	html=open_url(url)
+	r=re.compile('img src="(.*?)"')
+	result=r.findall(html.decode("utf-8"))
+	os.chdir("d:/")
+	for img in result:
+		filename=img.split("/")[-1]
+		with open(filename,"wb") as f:
+			img=open_url(img)
+			f.write(img)
+
+if __name__=="__main__":
+	#url="http://www.soupan.info/"
+	url="http://jandan.net/ooxx/page-2017#comments"
+	get_links(url)
