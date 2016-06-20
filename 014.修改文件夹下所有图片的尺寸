@@ -1,0 +1,16 @@
+#coding:utf-8
+from PIL import Image
+import os
+
+def change_size(path):
+	#获取当前目录所有文件名字
+	for picname in os.listdir(path):
+		picpath=os.path.join(path,picname)
+		with Image.open(picpath) as img:
+			#w,h=img.size
+			img.thumbnail((100,100))
+			os.chdir(path)
+			img.save("裁减后"+picname.split(".")[0]+".jpg","jpeg")
+
+if __name__=="__main__":
+	change_size("F:/test")
