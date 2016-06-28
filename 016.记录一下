@@ -60,7 +60,15 @@ from uiautomator import device as d
 #xml = d.dump()
 #下拉状态栏
 #d.open.quick_settings()
-
+#打开通知栏
+#d.open.notification()
+#如果页面存在
+#if d(text="Settings").exists:
+	#d.press.home()
+#等待当前界面空闲,默认10秒
+#d.wait.idle(timeout=10000)
+#d.press.home()
+	
 #Watcher
 #创建一个watcher
 #d.watcher("AUTO_FC_WHEN_ANR").when(text="ANR").when(text="Wait").click(text="Force Close")
@@ -104,13 +112,36 @@ from uiautomator import device as d
 #resourceId, resourceIdMatches
 #index, instance
 #------------------------------------------------
-#d.dump("D:/hierarchy.xml")
+#d.dump("D:/layout.xml")
 
 #Child
 #d(className="android.widget.FrameLayout").child(text="Bluetooth").click()
 
 #sibling
-#d.dump("D:/hierarchy.xml")
+#d.dump("D:/layout.xml")
 #d(className="android.widget.ImageButton",index="2").click()	#wifi界面
 #d(text="Off").sibling(className="android.widget.Switch").click()	#wifi界面
+#d(text="Wi-Fi").right(className="android.widget.ImageButton").click()
+#d(text="Wi-Fi").down(text="IPV6").click()
+#当界面有相同文字的UI对象时，instance=0，就点第一个
+#d(text="Google",instance=1).click()
+
+#统计当前页面UI的个数
+#print(d(text="Google").count)
+#也可以写成下面这样
+#print(len(d(text="Google")))
+#迭代
+#for view in d(text="Google"):
+	#......
+
+#检索当前对象的信息
+#print(d(text="Settings").info)
+
+#清除文本内容
+#d(className="android.widget.EditText").clear_text()
+#d(className="android.widget.EditText").set_text("这是")
+
+d(text="Settings").click.bottomright()
+
+
 
