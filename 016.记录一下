@@ -141,7 +141,19 @@ from uiautomator import device as d
 #d(className="android.widget.EditText").clear_text()
 #d(className="android.widget.EditText").set_text("这是")
 
-d(text="Settings").click.bottomright()
+#d(text="Settings").click.bottomright()
+#d(text="Settings").click.topleft()
+#d(text="System WebView licenses").click.wait()
 
+#d(text="Call").long_click()
+#d(text="Call").long_click.bottomright()
+#d(text="Call").long_click.topletf()
 
+#把UI对象拖到某个点
+#d(text="Settings").drag.to(200,400,steps=100)
+#d(text="Settings").drag.to(text="Drive",steps=100)
+
+#滑动
+#d(text="Play Store").swipe.right()
+#d(text="Display").swipe.left(steps=100)
 
