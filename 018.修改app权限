@@ -1,0 +1,8 @@
+d.press.home()
+d(description="ALL APPS").wait.exists()
+d(description="ALL APPS").click()
+d(scrollable=True).scroll.to(text="Settings")
+d(text="Settings").click()
+d(scrollable=True).scroll.to(text="Apps")
+d(text="Apps").click()
+d(index="3",className="android.widget.ImageButton").click()
