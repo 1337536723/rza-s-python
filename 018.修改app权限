@@ -1,8 +1,20 @@
-d.press.home()
-d(description="ALL APPS").wait.exists()
-d(description="ALL APPS").click()
-d(scrollable=True).scroll.to(text="Settings")
-d(text="Settings").click()
-d(scrollable=True).scroll.to(text="Apps")
-d(text="Apps").click()
-d(index="3",className="android.widget.ImageButton").click()
+#coding:utf-8
+from uiautomator import device as d
+import time
+
+def enter_app_permissions():
+	d.press.home()
+	d(description="ALL APPS").wait.exists()
+	d(description="ALL APPS").click.wait()
+	d(scrollable=True).scroll.to(text="Settings")
+	d(text="Settings").click.wait()
+	d(scrollable=True).scroll.to(text="Apps")
+	d(text="Apps").click.wait()
+	d(resourceId="com.android.settings:id/advanced").click.wait()
+	d(text="App permissions").click.wait()
+
+def open_permissions():
+	appList=["Body sensors","Calendar","Camera","Contacts","Location","Microphone","Phone","SMS","Storage","Additional permissions"]
+	d(index="2",className="android.widget.ImageButton").click.wait()
+	d(text="Show system").click.wait()
+	
