@@ -1,0 +1,11 @@
+#coding:utf-8
+import os
+
+def install_app(path):
+	for filename in os.listdir(path):
+		com=path+"/"+filename
+		os.system("adb install "+com)
+		
+if __name__=="__main__":
+	path="C:/Users/zhiai.ren/Desktop/googleAPK"
+	install_app(path)
