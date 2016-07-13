@@ -10,8 +10,9 @@ def rename_files(dir,i=1):
 		#修改所有名字
 		newfile=file.replace(filename,"a"+str(i))
 		print(newfile)
-		#更名生效
+		#dir+newfile替代dir+file
 		os.rename(
+			#连接dir和file
 			os.path.join(dir,file),
 			os.path.join(dir,newfile)
 		)
