@@ -22,23 +22,33 @@ def moveto(x,y):
 	windll.user32.SetCursorPos(x,y)
 	
 def operate():
+	#点击右下角显示主界面
 	time.sleep(3)
 	moveto(1360,757)
 	mouse_left_click()
+	
+	#双击tele
 	time.sleep(1)
 	moveto(41,168)
 	mouse_left_click()
 	mouse_left_click()
+	
+	#点击ok
 	time.sleep(1)
 	moveto(600,480)
 	mouse_left_click()
-	mouse_left_click()
+	
+	#选择项目
 	time.sleep(1)
 	moveto(468,276)
 	mouse_left_click()
+	
+	#选择4-4.5
 	time.sleep(1)
 	moveto(420,670)
 	mouse_left_click()
+	
+	#选择版本
 	time.sleep(1)
 	moveto(997,245)
 	mouse_left_click()
