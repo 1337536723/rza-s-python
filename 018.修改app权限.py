@@ -19,21 +19,22 @@ def open_permissions():
 		d(scrollable=True).scroll.to(text=name)
 		d(text=name).click.wait()
 		print(name)
-		d(text="Loaing...").wait.gone(timeout=30000)
-		d.click(455,75)
-		d(text="Show system").click()
-		time.sleep(1)
-		if d(scrollable=True).exists:
-			while d(scrollable=True).scroll.to(text="OFF"):
-				if d(text="OFF").count>=1:
-					d(text="OFF")[0].click()
-			if d(text="OFF").count==0:
-				d.press.back()
-		else:	
-				while d(text="OFF").count>=1:
-					d(text="OFF")[0].click()
+		if d(text="Loading...").wait.gone(timeout=30000):
+			d(description="More options").click.wait()
+			d(text="Show system").click()
+			time.sleep(1)
+			if d(scrollable=True).exists:
+				while d(scrollable=True).scroll.to(text="OFF"):
+					if d(text="OFF").count>=1:
+						d(text="OFF")[0].click()
 				if d(text="OFF").count==0:
 					d.press.back()
+			else:	
+					while d(text="OFF").count>=1:
+						d(text="OFF")[0].click()
+					if d(text="OFF").count==0:
+						d.press.back()
 						
 if __name__=="__main__":
+	enter_app_permissions()
 	open_permissions()
