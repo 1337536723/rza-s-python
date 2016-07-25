@@ -1,0 +1,17 @@
+#coding:utf-8
+
+filename="e45b5a07_Fail.txt"
+path="F:/pythonAPI/"
+txt=open(path+filename)
+lines=[]
+for line in txt:
+	lines.append(line.strip())
+txt.close()
+f=open(path+"update_"+filename,"w")
+keywords=["google","chrome","vending","twitter","facebook","wps"]
+for line in lines:
+	for keyword in keywords:
+		if line.find(keyword)!=-1:
+			line=line.replace(line,"")
+	f.write(line+"\n")
+f.close()
