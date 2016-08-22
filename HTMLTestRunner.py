@@ -1,3 +1,6 @@
+#转自http://www.cnblogs.com/sgtb/p/4169732.html
+#适用于python3.x
+
 """
 A TestRunner for use with the Python unit testing framework. It
 generates a HTML report to show the result at a glance.
