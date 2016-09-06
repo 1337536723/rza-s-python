@@ -10,7 +10,7 @@ subject='python测试邮件'
 smtpserver='smtp.163.com'
 #发送方帐号密码
 username=sender
-password='rza24352248'
+password='*********'
 	
 msg=MIMEText('你好！','plain','utf-8')
 msg['From']=sender
