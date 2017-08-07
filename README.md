@@ -12,3 +12,6 @@ http://blog.csdn.net/cxq234843654/article/details/51203143
 android优化：
 http://www.devtf.cn/?p=585
 http://blog.isming.me/2015/03/18/android-build-speed-up/
+
+连接夜神模拟器：
+adb版本与nox_adb版本一致就可以了
