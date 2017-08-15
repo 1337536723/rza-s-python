@@ -37,3 +37,6 @@
 34.	adb shell input text abc		输入abc
 35.	adb shell wm size		获取屏幕分辨率
 36.	adb version
+37. adb shell am start -W com.oecommunity.oeshop/.component.main.activity.MainActivity      获取apk启动时间
+38. adb shell dumpsys cpuinfo       查看CPU使用率
+39. adb shell dumpsys meminfo       查看内存使用状态
