@@ -15,3 +15,6 @@ http://blog.isming.me/2015/03/18/android-build-speed-up/
 
 连接夜神模拟器：
 adb版本与nox_adb版本一致就可以了
+
+Appium中文API：
+https://testerhome.com/topics/3711
