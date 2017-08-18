@@ -21,6 +21,7 @@ driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', desired_caps)
 time.sleep(5)
 # driver.wait_activity()
 print(driver.current_context)
+#多属性定位元素
 driver.find_element_by_android_uiautomator('new UiSelector().className("android.widget.RelativeLayout").index(7)').click()
 print(driver.current_activity)
 # print(driver.page_source)
