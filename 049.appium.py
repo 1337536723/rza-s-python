@@ -26,4 +26,4 @@ print(driver.current_activity)
 # print(driver.page_source)
 # with open('d:/app.txt','w') as f:
 #     f.write(driver.page_source)
-# driver.find_element_by_android_uiautomator('new UiDevice().waitForIdle')
+# driver.find_element_by_android_uiautomator('new UiDevice().waitForIdle()')
