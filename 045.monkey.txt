@@ -15,4 +15,4 @@
 12.	adb shell monkey --ignore-security-exceptions 10	发送10个随机事件，无视权限问题
 13.	adb shell monkey --kill-process-after-error 10	无视应用程序错误，继续执行
 14.	adb shell monkey --monitor-native-crashes 10	运行native code的崩溃事件被监视并报告
-15.	adb shell monkey -v -v -v -p com.tencent.mm --throttle 3000 --pct-touch 100 10 >d:/log.txt
+15.	adb shell monkey -p com.tencent.mm --ignore-crashes --ignore-timeouts --throttle 500 -v -s 9999 10000 >d:/log.txt
