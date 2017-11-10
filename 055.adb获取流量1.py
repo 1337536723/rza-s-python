@@ -22,23 +22,44 @@ def get_packages():
             packages.append(package)
     return packages
 
+def remove_system_app(packages):
+    packages_new=[]
+    for package in packages:
+        cmd='adb shell dumpsys package '+package+' | find "codePath=/data"'
+        proc=subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True)
+        #保留返回结果第一行+
+        output=proc.communicate()[0].split('\n')[0]
+        #如果codePath=/data就认为是第三方应用，如果codePath=/system就认为是系统应用
+        if 'codePath=/data' in output:
+            packages_new.append(package)
+    return packages_new
+
 def get_uid(package):
     '''
     获取uid
     :param package:
     :return:
     '''
-    uid=[]
+    uid=''
     #获取uid
     cmd='adb shell dumpsys package '+package+' | find "userId"'
     proc=subprocess.Popen(cmd,stdout=subprocess.PIPE,stderr=subprocess.PIPE,shell=True)
-    output=proc.communicate()[0].split('\n')
+    #保留返回结果第一行
+    output=proc.communicate()[0].split('\n')[0]
+    #去掉空格
+    output=output.replace(' ','')
     #判断结果里面是否有userId
-    if 'userId' in output[0]:
-        #去掉空格得到：userId=10053
-        output[0]=output[0].replace(' ','')
-        #去掉userId=，去掉\r
-        uid=output[0][7:].replace('\r','')
+    if 'userId=' in output:
+        #找到 userId= 的下标
+        index=output.find('userId=')
+        #从 userId= 的下标+7，开始遍历，直到字符串结束
+        for j in range((index+7),len(output)):
+            #如果是数字，就拼接到uid
+            if output[j].isdigit():
+                uid=uid+output[j]
+            else:
+                #不是数字的时候，就停止拼接
+                break
         return uid
     else:
         print('Not found uid')
@@ -49,7 +70,7 @@ def remone_duplicate_pid():
     去掉重复的pid，获得整个设备的uid，package
     :return:
     '''
-    packages=get_packages()
+    packages=remove_system_app(get_packages())
     uid_and_packages=[]
     for package in packages:
         #单个uid和package
@@ -121,5 +142,6 @@ def get_flows():
 
 if __name__=='__main__':
     print(time.strftime('%Y-%m-%d %H:%M:%S',time.localtime()))
-    get_flows()
+    x=get_flows()
+    print(len(x))
     print(time.strftime('%Y-%m-%d %H:%M:%S',time.localtime()))
