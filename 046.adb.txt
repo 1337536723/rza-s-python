@@ -40,3 +40,8 @@
 37. adb shell am start -W com.oecommunity.oeshop/.component.main.activity.MainActivity      获取apk启动时间
 38. adb shell dumpsys cpuinfo       查看CPU使用率
 39. adb shell dumpsys meminfo       查看内存使用状态
+40. adb shell cat /proc/pid/net/dev |find "wlan0"   根据pid获取设备的wifi流量
+41. adb shell cat /proc/pid/net/dev |find "rmnet0"  根据pid获取设备的数据流量
+42. adb shell cat /proc/net/xt_qtaguid/stats | find "uid"   根据uid获取app的流量，第6列数据是接收流量，第8列数据是发送流量
+43. adb shell dumpsys package com.android.settings | find "codePath=/system"    判断一个app是否是系统应用
+44. adb shell dumpsys package com.android.settings | find "userId"  查找一个app的userId
