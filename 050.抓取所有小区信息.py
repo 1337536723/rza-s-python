@@ -2,12 +2,7 @@
 from bs4 import BeautifulSoup
 import requests
 
-# url_addr = 'http://one.0easy.com/'
-# session = requests.Session()
-# params = {'username':'','password':''}
-# s = session.post(url_addr,params)
-# print(s.cookies.get_dict())
-url='http://one.0easy.com/'
+url=''
 cookie=''
 pages=[0,10,20,30]
 for page in pages:
