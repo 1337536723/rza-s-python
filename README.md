@@ -18,3 +18,6 @@ adb版本与nox_adb版本一致就可以了
 
 Appium中文API：
 https://testerhome.com/topics/3711
+
+jenkis启动：
+java -jar jenkins.war --httpPort=7777
