@@ -21,3 +21,6 @@ https://testerhome.com/topics/3711
 
 jenkis启动：
 java -jar jenkins.war --httpPort=7777
+
+弱网测试：
+https://testerhome.com/topics/482
