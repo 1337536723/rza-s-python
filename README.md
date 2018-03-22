@@ -24,3 +24,6 @@ java -jar jenkins.war --httpPort=7777
 
 弱网测试：
 https://testerhome.com/topics/482
+
+666
+http://www.pythontutor.com/visualize.html#mode=edit
